@@ -11,6 +11,8 @@ public class Article {
     private String corps;
     private Long categorie_id;
 
+    private String nom;
+
     public Article() {
         this.date = LocalDateTime.now();
     }
@@ -61,5 +63,13 @@ public class Article {
 
     public void setCategorie_id(Long category_id) {
         this.categorie_id = category_id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 }

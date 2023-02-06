@@ -11,9 +11,17 @@ public class Categorie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nom")
+    @Column(name = "nom", unique = true)
     private String nom;
 
     @OneToMany(targetEntity = ArticleEntity.class, mappedBy = "categorie")
     private List<ArticleEntity> articleList = new ArrayList<ArticleEntity>();
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getNom() {
+        return nom;
+    }
 }
